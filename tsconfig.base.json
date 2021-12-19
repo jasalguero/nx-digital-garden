@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@jasalguero/markdown": ["libs/markdown/src/index.ts"]
+      "@jasalguero/markdown": ["libs/markdown/src/index.ts"],
+      "@jasalguero/shared/mdx-elements": [
+        "libs/shared/mdx-elements/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

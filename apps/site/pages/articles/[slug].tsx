@@ -4,6 +4,7 @@ import { join } from 'path';
 import { readdirSync } from 'fs';
 import { getParsedFileContent, renderMarkdown } from '@jasalguero/markdown';
 import { MDXRemote } from 'next-mdx-remote';
+import dynamic from 'next/dynamic';
 import { Youtube, CustomLink } from '@jasalguero/shared/mdx-elements';
 
 export interface ArticleProps extends ParsedUrlQuery {
@@ -12,11 +13,14 @@ export interface ArticleProps extends ParsedUrlQuery {
 
 // list of all the customized elements for mdx content
 const mdxElements = {
-  Youtube,
-  a: CustomLink
+  Youtube: dynamic(async () => {
+    return await import("@jasalguero/shared/mdx-elements/youtube/youtube");
+  }),
+  // Youtube,
+  // a: CustomLink
 };
 
-const ARTICLES_PATH = join(process.cwd(), '_articles');
+const ARTICLES_PATH = join(process.cwd(), process.env.ARTICLE_MARKDOWN_PATH);
 
 export function Article({ frontMatter, html }) {
   return (

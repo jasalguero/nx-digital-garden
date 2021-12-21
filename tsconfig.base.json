@@ -18,6 +18,10 @@
       "@jasalguero/markdown": ["libs/markdown/src/index.ts"],
       "@jasalguero/shared/mdx-elements": [
         "libs/shared/mdx-elements/src/index.ts"
+      ],
+      // allow individual import of components instead of bringing the whole lib for segregated dynamic imports
+      "@jasalguero/shared/mdx-elements/*": [
+        "libs/shared/mdx-elements/src/lib/*"
       ]
     }
   },

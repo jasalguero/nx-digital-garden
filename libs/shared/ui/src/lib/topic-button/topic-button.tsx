@@ -31,9 +31,9 @@ export function TopicButton(props: TopicButtonProps) {
   };
 
   return (
-    <button className={styles.topicButton} onClick={onClickHandler}>
+    <button className={styles.topicButton} onClick={onClickHandler} data-testid='topic-button'>
       <img src={icon} alt="" className="w-12" />
-      <div className={styles.content}>{props.topicName}</div>
+      <div className={styles.content} data-testid='topic-name'>{props.topicName}</div>
     </button>
   );
 }

@@ -4,7 +4,7 @@ import TopicButton from './topic-button';
 
 describe('TopicButton', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<TopicButton title='Hello world' topicName='Javascript'/>);
+    const { baseElement } = render(<TopicButton topicName='Hello world'/>);
     expect(baseElement).toBeTruthy();
   });
 });

@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import { join } from 'path';
 import { readdirSync } from 'fs';
@@ -14,7 +14,7 @@ export interface ArticleProps extends ParsedUrlQuery {
 // list of all the customized elements for mdx content
 const mdxElements = {
   Youtube: dynamic(async () => {
-    return await import("@jasalguero/shared/mdx-elements/youtube/youtube");
+    return await import('@jasalguero/shared/mdx-elements/youtube/youtube');
   }),
   // Youtube,
   // a: CustomLink
@@ -22,7 +22,10 @@ const mdxElements = {
 
 const ARTICLES_PATH = join(process.cwd(), process.env.ARTICLE_MARKDOWN_PATH);
 
-export function Article({ frontMatter, html }) {
+export function Article({
+  frontMatter,
+  html,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <div className="m-6">
       <article className="prose prose-lg">
@@ -35,11 +38,7 @@ export function Article({ frontMatter, html }) {
   );
 }
 
-export const getStaticProps: GetStaticProps<ArticleProps> = async ({
-  params,
-}: {
-  params: ArticleProps;
-}) => {
+export const getStaticProps = async ({ params }: { params: ArticleProps }) => {
   // 1. parse the content of markdown and separate it into frontmatter and content
   const articleMarkdownContent = getParsedFileContent(
     params.slug,

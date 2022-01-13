@@ -2,34 +2,23 @@ import styles from './index.module.css';
 
 export function Index() {
   return (
-    <div className="bg-gray-50">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
-        <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-          <span className="block">Ready to dive in?</span>
-          <span className="block text-indigo-600">
-            Start your free trial today.
-          </span>
-        </h2>
-        <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-          <div className="inline-flex rounded-md shadow">
-            <a
-              href="#"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700"
-            >
-              Get started
-            </a>
-          </div>
-          <div className="ml-3 inline-flex rounded-md shadow">
-            <a
-              href="#"
-              className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-indigo-50"
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
+    <main>
+      <div className="text-big">
+        <h1 className="text-5xl font-semibold leading-tight text-gray-800 md:text-6xl lg:text-7xl lg:font-medium xl:text-8xl">
+          Hello there!
+        </h1>
+        <p>I&apos;m Jose Salguero, a spanish developer living in Berlin.</p>
+        <p>
+          I specialized in web application development with focus in Java and
+          Javascript. Eager to learn and apply new cutting edge technologies and
+          methodologies. Well organized, proactive, problem solving oriented and
+          able to work under pressure. I enjoy working international
+          environments and providing a good team spirit. Particularly interested
+          in high availability web development, user interfaces, high
+          performance applications and mobile applications
+        </p>
       </div>
-    </div>
+    </main>
   );
 }
 

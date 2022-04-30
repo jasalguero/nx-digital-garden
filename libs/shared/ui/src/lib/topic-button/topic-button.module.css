@@ -1,7 +1,0 @@
-.topicButton {
-  @apply flex items-center max-w-md pl-4 transition-shadow bg-white rounded-lg shadow min-w-max hover:shadow-md;
-}
-
-.topicButton .content {
-  @apply p-5 text-4xl font-bold;
-}
